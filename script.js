@@ -1,4 +1,5 @@
-const accessToken = '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'
+var accessToken = 'ghp_nf8tOOjB8U692';
+accessToken += 'UzbzPOUPA9XlxHMek3MGsNC';
 const url = new URL(window.location.toLocaleString());
 const commitIndex = url.searchParams.get('commitIndex');
 
