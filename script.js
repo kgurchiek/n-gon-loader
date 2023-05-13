@@ -21,14 +21,14 @@ function changeFavicon(src) {
 
   var allCommits = [];
   for (var i = 0; i < (commitCount / 100) - 1; i++) {
-    const commits = await (await fetch(`https://api.github.com/repos/landgreen/n-gon/commits?per_page=100&page=${i}`, {
+    const commits = await (await fetch(`https://api.github.com/repos/landgreen/n-gon/commits?per_page=100&page=${i + 1}`, {
       headers: {
         'Authorization': `Bearer ${accessToken}`
       }
     })).json();
     allCommits = allCommits.concat(commits)
   }
-  const commits = await (await fetch(`https://api.github.com/repos/landgreen/n-gon/commits?per_page=${commitCount % 100}&page=${Math.floor(commitCount) / 100}`, {
+  const commits = await (await fetch(`https://api.github.com/repos/landgreen/n-gon/commits?per_page=${commitCount % 100}&page=${Math.floor(commitCount / 100)}`, {
     headers: {
       'Authorization': `Bearer ${accessToken}`
     }
